@@ -1,0 +1,81 @@
+<Project>
+  <Name>Solid</Name>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>Taxes</Name>
+    <Language>CSharp</Language>
+    <Entities>
+      <Entity type="Interface">
+        <Name>ITax</Name>
+        <Access>Public</Access>
+        <Location left="626" top="307" />
+        <Size width="280" height="80" />
+        <Collapsed>False</Collapsed>
+        <Member type="Method">decimal ApplyTax(decimal salary)</Member>
+      </Entity>
+      <Entity type="Class">
+        <Name>Tax</Name>
+        <Access>Public</Access>
+        <Location left="583" top="479" />
+        <Size width="374" height="155" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">protected Tax()</Member>
+        <Member type="Property">protected Dictionary&lt;TaxRangeEnum, double&gt; Aliquot { get; set; }</Member>
+        <Member type="Property">protected Dictionary&lt;TaxRangeEnum, decimal&gt; ParcelToDeduct { get; set; }</Member>
+        <Member type="Method">public abstract decimal ApplyTax(decimal value)</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>INSS</Name>
+        <Access>Public</Access>
+        <Location left="466" top="715" />
+        <Size width="291" height="173" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public INSS(Dictionary&lt;TaxRangeEnum, double&gt; aliquot = null, Dictionary&lt;TaxRangeEnum, decimal&gt; parcelToDeduct = null)</Member>
+        <Member type="Method">public override decimal ApplyTax(decimal salary)</Member>
+        <Member type="Method">private TaxRangeEnum GetSalaryRange(decimal salary)</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>IR</Name>
+        <Access>Public</Access>
+        <Location left="804" top="715" />
+        <Size width="280" height="173" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public IR(Dictionary&lt;TaxRangeEnum, double&gt; aliquot = null, Dictionary&lt;TaxRangeEnum, decimal&gt; parcelToDeduct = null, int dependentsCount = 2, decimal deductionPerDependent = 189.59m)</Member>
+        <Member type="Method">public override decimal ApplyTax(decimal salary)</Member>
+        <Member type="Method">private TaxRangeEnum GetSalaryRange(decimal salary)</Member>
+        <Member type="Property">private int DependentsCount { get; set; }</Member>
+        <Member type="Property">private decimal DeductionPerDependent { get; set; }</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="2" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>781</X>
+          <Y>659</Y>
+        </BendPoint>
+      </Relationship>
+      <Relationship type="Realization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="1">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+        <BendPoint relativeToStartShape="False">
+          <X>781</X>
+          <Y>659</Y>
+        </BendPoint>
+      </Relationship>
+    </Relationships>
+  </ProjectItem>
+  <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
+    <Name>LoggerFactory</Name>
+    <Language>CSharp</Language>
+    <Entities />
+    <Relationships />
+  </ProjectItem>
+</Project>
