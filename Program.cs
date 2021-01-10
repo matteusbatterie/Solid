@@ -21,7 +21,7 @@ namespace Solid
             var taxes = new List<ITax>()
             {
                 new INSS(),
-                new IR()
+                new IR() 
             };
 
             salary.ApplyTaxes(taxes);
