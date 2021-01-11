@@ -12,6 +12,12 @@ namespace Solid
         // see https://refactoring.guru/pt-br/design-patterns/factory-method/
         static void Main(string[] args)
         {
+            //SalaryTaxes();
+            LoggerFactoryMethod();
+        }
+
+        static void SalaryTaxes()
+        {
             Console.WriteLine("Insert your salary:");
 
             var salaryInputValue = Convert.ToDecimal(Console.ReadLine().Replace(".", ","));
@@ -27,6 +33,11 @@ namespace Solid
             salary.ApplyTaxes(taxes);
 
             Console.WriteLine($"Your salary, applying taxes discounts, is: {salary.NetSalary.ToCurrencyString()}");
+        }
+    
+        static void LoggerFactoryMethod()
+        {
+            
         }
     }
 }

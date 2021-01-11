@@ -38,7 +38,7 @@
       <Entity type="Class">
         <Name>IR</Name>
         <Access>Public</Access>
-        <Location left="804" top="715" />
+        <Location left="803" top="715" />
         <Size width="280" height="173" />
         <Collapsed>False</Collapsed>
         <Member type="Constructor">public IR(Dictionary&lt;TaxRangeEnum, double&gt; aliquot = null, Dictionary&lt;TaxRangeEnum, decimal&gt; parcelToDeduct = null, int dependentsCount = 2, decimal deductionPerDependent = 189.59m)</Member>
@@ -47,6 +47,25 @@
         <Member type="Property">private int DependentsCount { get; set; }</Member>
         <Member type="Property">private decimal DeductionPerDependent { get; set; }</Member>
         <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Enum">
+        <Name>TaxRangeEnum</Name>
+        <Access>Public</Access>
+        <Location left="1423" top="701" />
+        <Size width="162" height="165" />
+        <Collapsed>False</Collapsed>
+        <Value>Unknown = 0</Value>
+        <Value>First = 1</Value>
+        <Value>Second = 2</Value>
+        <Value>Third = 3</Value>
+        <Value>Fourth = 4</Value>
+        <Value>Fifth = 5</Value>
+      </Entity>
+      <Entity type="Comment">
+        <Text>GetSalaryRange() return type
+</Text>
+        <Location left="1170" top="763" />
+        <Size width="172" height="50" />
       </Entity>
     </Entities>
     <Relationships>
@@ -70,12 +89,174 @@
           <Y>659</Y>
         </BendPoint>
       </Relationship>
+      <Relationship type="Comment" first="5" second="4">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="5" second="3">
+        <StartOrientation>Horizontal</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+      </Relationship>
+      <Relationship type="Comment" first="5" second="2">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Horizontal</EndOrientation>
+        <BendPoint relativeToStartShape="True">
+          <X>1256</X>
+          <Y>895</Y>
+        </BendPoint>
+        <BendPoint relativeToStartShape="False">
+          <X>779</X>
+          <Y>942</Y>
+        </BendPoint>
+      </Relationship>
     </Relationships>
   </ProjectItem>
   <ProjectItem type="NClass.DiagramEditor.ClassDiagram.Diagram" assembly="NClass.DiagramEditor, Version=2.4.1823.0, Culture=neutral, PublicKeyToken=null">
     <Name>LoggerFactory</Name>
     <Language>CSharp</Language>
-    <Entities />
-    <Relationships />
+    <Entities>
+      <Entity type="Class">
+        <Name>LoggerCreator</Name>
+        <Access>Public</Access>
+        <Location left="811" top="104" />
+        <Size width="162" height="145" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">protected LoggerCreator()</Member>
+        <Member type="Method">public abstract ILog FactoryMethod()</Member>
+        <Member type="Method">public void LogError()</Member>
+        <Member type="Method">public void LogWarning()</Member>
+        <Modifier>Abstract</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConsoleLoggerCreator</Name>
+        <Access>Public</Access>
+        <Location left="537" top="337" />
+        <Size width="187" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ConsoleLoggerCreator()</Member>
+        <Member type="Method">public override ILog FactoryMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WindowsLoggerCreator</Name>
+        <Access>Public</Access>
+        <Location left="792" top="337" />
+        <Size width="199" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public WindowsLoggerCreator()</Member>
+        <Member type="Method">public override ILog FactoryMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DatabaseLoggerCreator</Name>
+        <Access>Public</Access>
+        <Location left="1050" top="337" />
+        <Size width="188" height="216" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DatabaseLoggerCreator()</Member>
+        <Member type="Method">public override ILog FactoryMethod()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>ConsoleLogger</Name>
+        <Access>Public</Access>
+        <Location left="537" top="651" />
+        <Size width="195" height="232" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public ConsoleLogger()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>WindowsLogger</Name>
+        <Access>Public</Access>
+        <Location left="792" top="651" />
+        <Size width="195" height="232" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public WindowsLogger()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Class">
+        <Name>DataBaseLogger</Name>
+        <Access>Public</Access>
+        <Location left="1050" top="651" />
+        <Size width="195" height="232" />
+        <Collapsed>False</Collapsed>
+        <Member type="Constructor">public DataBaseLogger()</Member>
+        <Modifier>None</Modifier>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Abstract Creator
+</Text>
+        <Location left="962" top="69" />
+        <Size width="102" height="50" />
+      </Entity>
+      <Entity type="Interface">
+        <Name>ILogger</Name>
+        <Access>Public</Access>
+        <Location left="776" top="1000" />
+        <Size width="227" height="236" />
+        <Collapsed>False</Collapsed>
+      </Entity>
+      <Entity type="Comment">
+        <Text>Concrete Creator
+</Text>
+        <Location left="1224" top="305" />
+        <Size width="117" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Concrete Product</Text>
+        <Location left="1239" top="634" />
+        <Size width="115" height="50" />
+      </Entity>
+      <Entity type="Comment">
+        <Text>Abstract Product</Text>
+        <Location left="987" top="969" />
+        <Size width="115" height="50" />
+      </Entity>
+    </Entities>
+    <Relationships>
+      <Relationship type="Generalization" first="1" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="2" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Generalization" first="3" second="0">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="2" second="5">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="1" second="4">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Dependency" first="3" second="6">
+        <Label>
+        </Label>
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="4" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="5" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+      <Relationship type="Realization" first="6" second="8">
+        <StartOrientation>Vertical</StartOrientation>
+        <EndOrientation>Vertical</EndOrientation>
+      </Relationship>
+    </Relationships>
   </ProjectItem>
 </Project>
