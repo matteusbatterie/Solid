@@ -176,12 +176,12 @@
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Class">
-        <Name>DataBaseLogger</Name>
+        <Name>DatabaseLogger</Name>
         <Access>Public</Access>
         <Location left="1050" top="651" />
         <Size width="195" height="232" />
         <Collapsed>False</Collapsed>
-        <Member type="Constructor">public DataBaseLogger()</Member>
+        <Member type="Constructor">public DatabaseLogger()</Member>
         <Modifier>None</Modifier>
       </Entity>
       <Entity type="Comment">
@@ -196,6 +196,8 @@
         <Location left="776" top="1000" />
         <Size width="227" height="236" />
         <Collapsed>False</Collapsed>
+        <Member type="Method">void LogError()</Member>
+        <Member type="Method">void LogWarning()</Member>
       </Entity>
       <Entity type="Comment">
         <Text>Concrete Creator
