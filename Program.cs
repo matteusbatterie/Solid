@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using Solid.Classes;
-using Solid.Helpers;
+using Solid.Helpers.Notification;
+using Solid.Helpers.Utils;
+using Solid.Helpers.Utils.Enums;
 using Solid.Interface;
 
 namespace Solid
@@ -27,17 +29,46 @@ namespace Solid
             var taxes = new List<ITax>()
             {
                 new INSS(),
-                new IR() 
+                new IR()
             };
 
             salary.ApplyTaxes(taxes);
 
             Console.WriteLine($"Your salary, applying taxes discounts, is: {salary.NetSalary.ToCurrencyString()}");
         }
-    
+
         static void LoggerFactoryMethod()
         {
-            
+            var genericError = new Error()
+            {
+                Criticality = ErrorCriticalityLevelEnum.GenericError,
+                Message = "Generic Error."
+            };
+
+            var criticalError = new Error()
+            {
+                Criticality = ErrorCriticalityLevelEnum.CriticalError,
+                Message = "Critical error!!!"
+            };
+
+            var notificationHandler = new NotificationHandler();
+
+            System.Console.Clear();
+            System.Console.WriteLine("Test with Generic Error");
+            System.Console.WriteLine("");
+            var logger = notificationHandler.LoggerCreators[genericError.Criticality].Invoke();
+            logger.LogError(genericError);
+            System.Console.WriteLine("");
+
+            System.Console.WriteLine("");
+            System.Console.WriteLine("");
+
+            System.Console.WriteLine("Test with Critical Error");
+            System.Console.WriteLine("");
+            logger = notificationHandler.LoggerCreators[criticalError.Criticality].Invoke();
+            logger.LogError(criticalError);
+            System.Console.WriteLine("");
+            System.Console.WriteLine("");
         }
     }
 }

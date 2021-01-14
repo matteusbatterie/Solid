@@ -1,4 +1,4 @@
-namespace Solid.Helpers
+namespace Solid.Helpers.Utils
 {
     public static class Stringfier
     {

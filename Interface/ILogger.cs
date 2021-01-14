@@ -1,8 +1,10 @@
+using Solid.Helpers.Notification;
+
 namespace Solid.Interface
 {
     public interface ILogger
     {
-        void LogError();
-        void LogWarning();
+        void DisplayError(Error error);
+        void LogError(Error error);
     }
 }
