@@ -3,9 +3,9 @@ using Solid.Interface;
 
 namespace Solid.Helpers.Loggers
 {
-    public abstract class Logger : ILogger
+    public abstract class ErrorLogger : ILogger
     {
-        public Logger() { }
+        public ErrorLogger() { }
 
         public void DisplayError(Error error)
         {
