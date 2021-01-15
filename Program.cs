@@ -42,13 +42,13 @@ namespace Solid
             var genericError = new Error()
             {
                 Criticality = ErrorCriticalityLevelEnum.GenericError,
-                Message = "Generic Error."
+                Message = $"{ErrorCriticalityLevelEnum.GenericError.GetDescription()}."
             };
 
             var criticalError = new Error()
             {
                 Criticality = ErrorCriticalityLevelEnum.CriticalError,
-                Message = "Critical error!!!"
+                Message = $"{ErrorCriticalityLevelEnum.CriticalError.GetDescription()}!!!"
             };
 
             var notificationHandler = new NotificationHandler();
