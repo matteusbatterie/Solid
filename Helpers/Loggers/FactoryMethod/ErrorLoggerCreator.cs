@@ -2,12 +2,12 @@ using Solid.Helpers.Notification;
 
 namespace Solid.Helpers.Loggers.FactoryMethod
 {
-    public abstract class LoggerCreator
+    public abstract class ErrorLoggerCreator
     {
-        public LoggerCreator() { }
+        public ErrorLoggerCreator() { }
 
 
-        public abstract Logger FactoryMethod();
+        public abstract ErrorLogger FactoryMethod();
 
         public void LogError(Error error)
         {

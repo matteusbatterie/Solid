@@ -3,7 +3,7 @@ using Solid.Helpers.Notification;
 
 namespace Solid.Helpers.Loggers
 {
-    public class CriticalErrorLogger : Logger
+    public class CriticalErrorLogger : ErrorLogger
     {
         public CriticalErrorLogger() { }
 

@@ -2,7 +2,7 @@ using Solid.Helpers.Notification;
 
 namespace Solid.Helpers.Loggers
 {
-    public class GenericErrorLogger : Logger
+    public class GenericErrorLogger : ErrorLogger
     {
         public GenericErrorLogger() { }
 

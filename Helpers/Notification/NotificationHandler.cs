@@ -8,11 +8,11 @@ namespace Solid.Helpers.Notification
 {
     public class NotificationHandler
     {
-        public IDictionary<ErrorCriticalityLevelEnum, Func<LoggerCreator>> LoggerCreators { get; set; }
+        public IDictionary<ErrorCriticalityLevelEnum, Func<ErrorLoggerCreator>> LoggerCreators { get; set; }
 
         public NotificationHandler()
         {
-            LoggerCreators = new Dictionary<ErrorCriticalityLevelEnum, Func<LoggerCreator>>
+            LoggerCreators = new Dictionary<ErrorCriticalityLevelEnum, Func<ErrorLoggerCreator>>
             {
                 {ErrorCriticalityLevelEnum.GenericError, () => GetGenericLoggerCreator()},
                 {ErrorCriticalityLevelEnum.CriticalError, () => GetCriticalLoggerCreator()}
@@ -20,12 +20,12 @@ namespace Solid.Helpers.Notification
         }
 
 
-        public LoggerCreator GetGenericLoggerCreator()
+        public ErrorLoggerCreator GetGenericLoggerCreator()
         {
             return new GenericErrorLoggerCreator();
         }
 
-        public LoggerCreator GetCriticalLoggerCreator()
+        public ErrorLoggerCreator GetCriticalLoggerCreator()
         {
             return new CriticalErrorLoggerCreator();
         }

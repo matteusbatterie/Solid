@@ -2,11 +2,11 @@ using Solid.Helpers.Loggers;
 
 namespace Solid.Helpers.Loggers.FactoryMethod
 {
-    public class GenericErrorLoggerCreator : LoggerCreator
+    public class GenericErrorLoggerCreator : ErrorLoggerCreator
     {
         public GenericErrorLoggerCreator() { }
 
 
-        public override Logger FactoryMethod() => new GenericErrorLogger();
+        public override ErrorLogger FactoryMethod() => new GenericErrorLogger();
     }
 }
